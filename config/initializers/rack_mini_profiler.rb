@@ -5,4 +5,6 @@ if Rails.env.development?
 
   # The initializer was required late, so initialize it manually.
   Rack::MiniProfilerRails.initialize!(Rails.application)
+
+  Rack::MiniProfiler.config.enable_hotwire_turbo_drive_support = true
 end

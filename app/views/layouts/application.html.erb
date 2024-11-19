@@ -22,7 +22,27 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-turbo="<%= @turbo %>">
+    <nav>
+      <p>With turbo enabled - Failing</p>
+      <ul>
+        <li><%= link_to "one", static_one_path %></li>
+        <li><%= link_to "two", static_two_path %></li>
+        <li><%= link_to "three", static_three_path %></li>
+        <li><%= link_to "four", static_four_path %></li>
+      </ul>
+    </nav>
+
+    <nav>
+      <p>With turbo disabled - Working</p>
+      <ul>
+        <li><%= link_to "one", static_one_path, data: { turbo: false } %></li>
+        <li><%= link_to "two", static_two_path, data: { turbo: false } %></li>
+        <li><%= link_to "three", static_three_path, data: { turbo: false } %></li>
+        <li><%= link_to "four", static_four_path, data: { turbo: false } %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
+  <% console %>
 </html>
