@@ -61,3 +61,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "rack-mini-profiler", "~> 3.3", require: false
+
+gem "stackprof", "~> 0.2.26"
+
+gem "memory_profiler", "~> 1.1"
